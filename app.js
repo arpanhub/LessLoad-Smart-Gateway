@@ -1,18 +1,21 @@
 import express from 'express';
-import 'dotenv/config';
-import authRoute from './src/routes/authroutes';
-const app =  express();
+import authRoute from './src/routes/authroutes.js'
+
+const app = express();
 
 app.use(express.json());
-app.get('/',(req,res)=>{
-    res.send('Hello World');
-})
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the API Gateway');
+});
+
+app.use('/api/auth', authRoute);
 
 
-app.use('/api/auth',authRoute)
 
-//for the server to lsiten
-const PORT  = process.env.PORT || 5000;
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-})
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+    console.log(`Server is running on port localhost:${PORT}`);
+});
+
+

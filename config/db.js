@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { config } from 'dotenv';
 config();
 
-const url = process.env.mongoURL;
+const url = process.env.MONGO_URL;
 
 let Database; // Keep this for backward compatibility
 

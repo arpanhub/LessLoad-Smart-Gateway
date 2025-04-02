@@ -1,6 +1,6 @@
-import User from '../models/user';
+import User from '../models/user.js'
 import {config} from 'dotenv';
-import jwt from 'jasonwebtoken';
+import jwt from 'jsonwebtoken';
 config();
 const jwtkey = process.env.JWT_SECRET;
 const registerController = async (req, res) => {
